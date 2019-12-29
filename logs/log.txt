@@ -1,0 +1,7 @@
+[GIN] 2019/12/29 - 16:41:19 | 307 |      39.117µs |       127.0.0.1 | GET      /
+[GIN] 2019/12/29 - 16:41:19 | 200 |     588.881µs |       127.0.0.1 | GET      /login
+[GIN] 2019/12/29 - 16:41:19 | 200 |  111.200383ms |       127.0.0.1 | GET      /dashboard
+[GIN] 2019/12/29 - 16:41:19 | 404 |         809ns |       127.0.0.1 | GET      /favicon.ico
+[GIN] 2019/12/29 - 16:41:29 | 307 |  1.095678205s |       127.0.0.1 | GET      /dashboard/cdr/course?course_id=dsa&title=asd&department=asd&credits=asd
+[GIN] 2019/12/29 - 16:41:43 | 307 |  132.407247ms |       127.0.0.1 | GET      /dashboard/cdr/course?course_id=123&title=123&department=ew&credits=2
+[GIN] 2019/12/29 - 16:41:43 | 200 |    5.543303ms |       127.0.0.1 | GET      /dashboard

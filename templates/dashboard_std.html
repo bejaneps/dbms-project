@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <style>
+            html {
+                height: 100%;
+            }
+
+            body {
+                background: #76b852; /* fallback for old browsers */
+                background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+                background: -moz-linear-gradient(right, #76b852, #8DC26F);
+                background: -o-linear-gradient(right, #76b852, #8DC26F);
+                background: linear-gradient(to left, #76b852, #8DC26F);
+                font-family: "Roboto", sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-family: 'Lato', sans-serif;
+            }
+
+            form {
+                position: relative;
+            }
+
+            #ctr {
+                width: 150px;
+                display: inline;
+            }
+
+            .container {
+                margin-top: 2%;
+            }
+        </style>
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="http://127.0.0.1:5050/dashboard">Dashboard</a>
+                <button class="navbar-toggler" type="button"
+                    data-toggle="collapse"
+                    data-target="#alts" aria-controls="alts"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="alts">
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-item nav-link"
+                            href="http://127.0.0.1:5050/logout">Logout
+                            <i class="fas fa-sign-out-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <form class="form-group" method="GET" action="http://127.0.0.1:5050/dashboard/std/courses" enctype="application/x-www-form-urlencoded">
+                <button type="submit" class="btn btn-primary btn-lg">See Registered Courses</button>
+            </form>
+            {{if .}}
+                <ol class="list-group">
+                {{range $i, $val := .}}
+                    <li class="list-group-item" id="ctr">{{$val}}</li>
+                {{end}}
+                </ol>
+            {{end}}
+        </div>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous">
+        </script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous">
+        </script>
+    </body>
+
+</html>
